@@ -13,6 +13,9 @@
       <td><%= assignment.description %></td>
       <td><%= assignment.subject %></td>
       <td><%= assignment.due_date %></td>
+      <td><%= link_to "Edit", edit_assignment_path(assignment) %></td>
+      <td><%= link_to "Delete", assignment_path(assignment),
+        method: :delete %>
     </tr>
   <% end %>
 </table>
