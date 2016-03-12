@@ -34,6 +34,13 @@ class AssignmentsController < ApplicationController
     redirect_to action: "index"
   end
 
+  def alert
+    @assignment = Assignment.first
+    @assignment.send_update
+
+    redirect_to action: "index"
+  end
+
   private
 
   def assignment_params
