@@ -1,29 +1,46 @@
-<h1> This is the list of assignments </h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Subject</th>
-    <th>Due date</th>
-  </tr>
-
-  <% @assignments.each do |assignment| %>
+<% if @assignments.any? %>
+  <h1>Your assignments </h1>
+  <table class="table table-striped">
     <tr>
-      <td><%= assignment.title %></td>
-      <td><%= assignment.description %></td>
-      <td><%= assignment.subject %></td>
-      <td><%= assignment.due_date %></td>
-      <td><%= link_to "Edit", edit_assignment_path(assignment) %></td>
-      <td><%= link_to "Delete", assignment_path(assignment),
-        method: :delete %>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Subject</th>
+      <th>Due date</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
-  <% end %>
-</table>
+    <% @assignments.each do |assignment| %>
+        <% if assignment.is_due %>
+          <tr class="danger">
+        <% elsif assignment.is_past %>
+          <tr class="success">
+        <% else %>
+          <tr>
+        <% end %>
+        <td><%= assignment.title %></td>
+        <td><%= assignment.description %></td>
+        <td><%= assignment.subject %></td>
+        <td><%= assignment.due_date %></td>
 
-<p>
-<form action="/assignment/<%= @assignment.id.to_s%>/alert" method="post">
-  <input type="text" name="phone">
-  <input type="submit" value="Send alert">
-</form>
-</p>
+        <td><%= link_to "Edit", edit_assignment_path(assignment) %></td>
+        <td><%= link_to "Delete", assignment_path(assignment),
+          method: :delete %>
+      </tr>
+    <% end %>
+  </table>
+  <p>
+  Text alerts will be sent out at 6pm daily.
+  <form action="/assignment/<%= @assignment.id.to_s%>/alert" method="post">
+    <input type="text" name="phone">
+    <input type="submit" value="Send test alert">
+  </form>
+  </p>
+<% else %>
+  <h1>You have no assignments right now.</h1>
+<% end %>
+
+  <p>
+    <a href="/assignments/new">Add an assignment?</a>
+  </p>
+
 

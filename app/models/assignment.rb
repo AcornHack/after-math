@@ -13,6 +13,15 @@ class Assignment < ActiveRecord::Base
     "You have #{due_assignments.count} pieces of work due tomorrow.\n #{assignment_text}"
   end
 
+  def is_due
+    due = Date.today...Date.tomorrow
+    due === self.due_date.to_date
+  end
+
+  def is_past
+    self.due_date.to_date < Date.today
+  end
+
   private
 
   def twilio
