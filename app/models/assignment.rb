@@ -14,7 +14,7 @@ class Assignment < ActiveRecord::Base
   end
 
   def is_due
-    due = Date.today...Date.tomorrow
+    due = Date.today...Date.current+2
     due === self.due_date.to_date
   end
 
