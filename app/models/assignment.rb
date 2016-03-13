@@ -1,10 +1,10 @@
 require 'twilio-ruby'
 
 class Assignment < ActiveRecord::Base
-  def send_update
+  def send_update recipient
     twilio.messages.create(
       from: @from,
-      to: '+447545142090',
+      to: recipient,
       body: message_text
     )
   end

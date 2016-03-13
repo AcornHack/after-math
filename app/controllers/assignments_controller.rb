@@ -2,6 +2,7 @@ class AssignmentsController < ApplicationController
 
   def index
     @assignments = Assignment.all
+    @assignment = Assignment.first
   end
 
   def new
@@ -36,7 +37,7 @@ class AssignmentsController < ApplicationController
 
   def alert
     @assignment = Assignment.first
-    @assignment.send_update
+    @assignment.send_update params[:phone]
 
     redirect_to action: "index"
   end

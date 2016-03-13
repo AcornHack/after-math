@@ -20,4 +20,10 @@
   <% end %>
 </table>
 
-<a href="#">
+<p>
+<form action="/assignment/<%= @assignment.id.to_s%>/alert" method="post">
+  <input type="text" name="phone">
+  <input type="submit" value="Send alert">
+</form>
+</p>
+
