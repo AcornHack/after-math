@@ -22,6 +22,6 @@ To run the app locally, in terminal run these commands:
 4) Start the app server
 `rails s`
 
-5) Visit http://http://localhost:3000/ in your browser :-)
+5) Visit http://localhost:3000/ in your browser :-)
 
 
