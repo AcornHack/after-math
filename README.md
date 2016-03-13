@@ -1,7 +1,8 @@
 # after-math
 Homework reminder
 
-https://after-math.herokuapp.com/
+http://project-after-math.herokuapp.com/
+(Ruby app is http://after-math.herokuapp.com/)
 
 **Running the app for development**
 
