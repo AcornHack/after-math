@@ -3,7 +3,7 @@ Homework reminder
 
 https://after-math.herokuapp.com/
 
-*Running the app for development*
+_Running the app for development_
 To run the app locally, in terminal run these commands:
 
 1) Install rails
