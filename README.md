@@ -2,6 +2,7 @@
 Homework reminder
 
 http://project-after-math.herokuapp.com/
+
 (Ruby app is http://after-math.herokuapp.com/)
 
 **Running the app for development**
