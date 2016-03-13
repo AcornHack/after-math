@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :assignments
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'assignments#index'
    post '/assignment/:id/alert', to: 'assignments#alert'
 
   # Example of regular route:

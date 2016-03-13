@@ -1,19 +1,29 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Edit assignment</a>
+  </div>
+</nav>
+
+<div class="container">
 <%= form_for :assignment, url: assignments_path do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-  <p>
-  <%= f.label :description %><br>
-  <%= f.text_area :description %>
-  </p>
-  <p>
-  <%= f.label :subject %><br>
-  <%= f.text_field :subject %>
-  </p>
-  <p>
-  <%= f.label :due_date %><br>
-  <%= f.datetime_select :due_date %>
-  </p>
-  <p>
-  <%= f.submit %>
-  </p>
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+    </p>
+    <p>
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+    </p>
+    <p>
+    <%= f.label :due_date %><br>
+    <%= f.datetime_select :due_date %>
+    </p>
+    <p>
+    <%= f.submit %>
+    </p>
+  </div>
 <% end %>
+</div>

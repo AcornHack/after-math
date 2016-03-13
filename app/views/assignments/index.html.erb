@@ -1,5 +1,13 @@
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">Your assignments</a>
+</div>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/assignments/new">Add assignment</a></li>
+  </ul>
+</nav>
+
 <% if @assignments.any? %>
-  <h1>Your assignments </h1>
   <table class="table table-striped">
     <tr>
       <th>Title</th>
@@ -30,17 +38,18 @@
   </table>
   <p>
   Text alerts will be sent out at 6pm daily.
-  <form action="/assignment/<%= @assignment.id.to_s%>/alert" method="post">
-    <input type="text" name="phone">
-    <input type="submit" value="Send test alert">
-  </form>
+  <div class="form-group">
+    <form action="/assignment/<%= @assignment.id.to_s%>/alert" method="post">
+      <input type="text" name="phone">
+      <input type="submit" value="Send test alert">
+    </form>
+  </div>
   </p>
 <% else %>
-  <h1>You have no assignments right now.</h1>
+  <h2>You have no assignments right now.</h2>
 <% end %>
 
   <p>
-    <a href="/assignments/new">Add an assignment?</a>
   </p>
 
 
